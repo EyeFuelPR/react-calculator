@@ -95,5 +95,11 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }]
         }]
+    }, {
+        title: 'Mid-Range',
+        sections: []
+    }, {
+        title: 'High-End',
+        sections: [],
     }]
 }

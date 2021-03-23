@@ -20,7 +20,11 @@ export class App extends React.PureComponent<{}, IState> {
         return (
             <>
                 <Header title={title}/>
-                <Tabs tabs={tabs} onTabClicked={this.onTabClick}/>
+                <Tabs
+                    tabs={tabs}
+                    activeTabIndex={currentTab}
+                    onTabClicked={this.onTabClick}
+                />
                 <Sections sections={tabs[currentTab].sections}/>
             </>
         );
