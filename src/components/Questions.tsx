@@ -11,7 +11,7 @@ export class Questions extends React.PureComponent<IProps> {
     public render() {
         const { questions } = this.props;
         return questions.map((question, index) => (
-            <div key={index} style={{ marginBottom: 20 }}>
+            <div key={index} style={{ marginBottom: 40 }}>
                 <strong>{ question.title }</strong>
                 <Options options={question.options}/> 
             </div>
