@@ -5,6 +5,7 @@ import { ITab } from '../data/questionnaire';
 
 interface IProps {
     tabs: ITab[];
+    onTabClicked: (tabIndex: number) => void;
 }
 
 export class Tabs extends React.PureComponent<IProps> {
@@ -15,7 +16,9 @@ export class Tabs extends React.PureComponent<IProps> {
                 {
                     tabs.map((tab, index) => {
                         return (
-                            <Nav.Item>{ tab.title }</Nav.Item>
+                            <Nav.Item onClick={() => this.props.onTabClicked(index)} key={index}>
+                                { tab.title }
+                            </Nav.Item>
                         )
                     })
                 }
