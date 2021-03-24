@@ -431,7 +431,525 @@ export const questionnaire: IQuestionnaire = {
         }]
     }, {
         title: 'Mid-Range',
-        sections: []
+        sections: [{
+            title: 'Pre-Production',
+            questions: [{
+                questionNumber: 1,
+                hint: '',
+                title: 'Do you have a concept and storyboard in place?',
+                pseudoTitle: 'Concept and Storyboard',
+                options: [{
+                    title: `We're supplying the concept and the storyboard`,
+                    range: {
+                        min: 0,
+                        max: 0,
+                    },
+                }, {
+                    title: 'We have a concpet and need to develop a storyboard',
+                    range: {
+                        min: 450,
+                        max: 2500,
+                    },
+                }, {
+                    title: 'We need a concept developed and a storyboard',
+                    range: {
+                        min: 1000,
+                        max: 5000,
+                    },
+                    default: true,
+                }],
+            }, {
+                questionNumber: 2,
+                hint: '',
+                title: 'How much project management and scheduling is required?',
+                pseudoTitle: 'Project Management',
+                options: [{
+                    title: 'A small amount of project management is required',
+                    range: {
+                        min: 250,
+                        max: 750,
+                    }
+                }, {
+                    title: 'A modest amount of project management is needed',
+                    range: {
+                        min: 500,
+                        max: 1500,
+                    },
+                    default: true,
+                }, {
+                    title: 'A great deal of project management is required',
+                    range: {
+                        min: 1000,
+                        max: 3000,
+                    }
+                }],
+            }]
+        }, {
+            title: 'Production',
+            questions: [{
+                questionNumber: 3,
+                hint: '',
+                title: 'What type of film crew do you need for your shoot?',
+                pseudoTitle: 'Film Crew',
+                options: [{
+                    title: `We don't need a camera crew for this video project`,
+                    range: {
+                        min: 0,
+                        max: 0,
+                    }
+                }, {
+                    title: 'Two man crew - two cameras or camera and audio',
+                    range: {
+                        min: 2400,
+                        max: 8000,
+                    }
+                }, {
+                    title: 'Three man crew - two cameras and one audio',
+                    range: {
+                        min: 3600,
+                        max: 10000,
+                    },
+                    default: true
+                }, {
+                    title: 'Four man crew - two cameras, one audio and director',
+                    range: {
+                        min: 5600,
+                        max: 16000,
+                    }
+                }, {
+                    title: 'Five man + crew - two cameras, audio, director and gaffer',
+                    range: {
+                        min: 6400,
+                        max: 20000,
+                    }
+                }],
+            }, {
+                questionNumber: 4,
+                hint: '',
+                title: 'How many days of shooting are required?',
+                pseudoTitle: 'Days of Shooting',
+                options: [{
+                    title: 'Half day of shooting',
+                    range: 'Half day'
+                }, {
+                    title: 'Full day of shooting',
+                    range: '1 day'
+                }, {
+                    title: 'Two days of shooting',
+                    range: '2 days',
+                    default: true
+                }, {
+                    title: 'Three days of shooting',
+                    range: '3 days'
+                }, {
+                    title: 'Four days of shooting',
+                    range: '4 days'
+                }],
+            }, {
+                questionNumber: 5,
+                hint: '',
+                title: 'Do you require special production equipment?',
+                pseudoTitle: 'Special Production Equipment',
+                options: [{
+                    title: 'No special equipment is needed',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    }
+                }, {
+                    title: 'Some special equipment will be needed',
+                    range: {
+                        min: 500,
+                        max: 2000,
+                    },
+                    default: true
+                }, {
+                    title: 'A lot of specialized gear is required',
+                    range: {
+                        min: 1000,
+                        max: 5000,
+                    }
+                }],
+            }, {
+                questionNumber: 6,
+                hint: '',
+                title: 'Do you need a studio or other controlled shooting space that you cannot provide?',
+                pseudoTitle: 'Studio',
+                options: [{
+                    title: 'We will provide the shooting location',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    }
+                }, {
+                    title: 'We need a studio location to shoot in',
+                    range: {
+                        min: 700,
+                        max: 3000,
+                    },
+                    default: true
+                }, {
+                    title: 'We will require on-location shooting for this video',
+                    range: {
+                        min: 500,
+                        max: 5000,
+                    }
+                }],
+            }, {
+                questionNumber: 7,
+                hint: '',
+                title: 'Do you require a teleprompter and operator?',
+                pseudoTitle: 'Teleprompter',
+                options: [{
+                    title: `No, we don't need a teleprompter`,
+                    range: {
+                        min: 0,
+                        max: 0,
+                    },
+                    default: true
+                }, {
+                    title: 'We need a teleprompter and operator for half day',
+                    range: {
+                        min: 300,
+                        max: 600,
+                    }
+                }, {
+                    title: 'We need a teleprompter and operator for full day',
+                    range: {
+                        min: 800,
+                        max: 1800,
+                    }
+                }, {
+                    title: 'We need a teleprompter and operator for two days',
+                    range: {
+                        min: 800,
+                        max: 1800,
+                    }
+                }, {
+                    title: 'We need a teleprompter and operator for three days',
+                    range: {
+                        min: 1200,
+                        max: 2700,
+                    }
+                }],
+            }, {
+                questionNumber: 8,
+                hint: '',
+                title: 'Do you require on-camera talent?',
+                pseudoTitle: 'Talent',
+                options: [{
+                    title: 'We will supply any on-camera talent (if needed)',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    },
+                    default: true,
+                }, {
+                    title: 'We need a professional Presenter',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    }
+                }, {
+                    title: 'We need a non-union actor',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    }
+                }, {
+                    title: 'We need a union actor',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    }
+                }, {
+                    title: 'We need a Celebrity',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    }
+                }],
+            }, {
+                questionNumber: 9,
+                hint: '',
+                title: 'How many days of shooting is needed for talent?',
+                pseudoTitle: 'Talent Shooting Days',
+                options: [{
+                    title: 'No shooting days are required',
+                    range: 'No shooting',
+                    default: true
+                }, {
+                    title: 'Half day of shooting',
+                    range: 'Half day'
+                }, {
+                    title: 'Full day of shooting',
+                    range: '1 day'
+                }, {
+                    title: 'Two days of shooting',
+                    range: '2 days'
+                }, {
+                    title: 'Three days of shooting',
+                    range: '3 days'
+                }],
+            }, {
+                questionNumber: 10,
+                hint: '',
+                title: 'Do you require hair, make-up or wardrobe for talent?',
+                pseudoTitle: 'Hair & Make-up',
+                options: [{
+                    title: 'No hair, make-up or wardrobe required',
+                    range: {
+                        min: 0,
+                        max: 0
+                    }
+                }, {
+                    title: 'We require basic hair and makeup',
+                    range: {
+                        min: 400,
+                        max: 1000
+                    },
+                    default: true
+                }, {
+                    title: 'We require professional hair and makeup',
+                    range: {
+                        min: 800,
+                        max: 2500
+                    }
+                }, {
+                    title: 'We require full hair, makeup and wardrobe',
+                    range: {
+                        min: 1000,
+                        max: 4000
+                    }
+                }],
+            }, {
+                questionNumber: 11,
+                hint: '',
+                title: 'Location and Permission costs',
+                pseudoTitle: 'Location costs',
+                options: [{
+                    title: 'No special costs associated with lcoation',
+                    range: {
+                        min: 0,
+                        max: 0
+                    }
+                }, {
+                    title: 'Basic Location Costs',
+                    range: {
+                        min: 500,
+                        max: 2000
+                    },
+                    default: true
+                }, {
+                    title: 'Advanced Location and Permissions needed',
+                    range: {
+                        min: 2000,
+                        max: 5000
+                    }
+                }],
+            }]
+        }, {
+            title: 'Post_Production',
+            questions: [{
+                questionNumber: 12,
+                hint: '',
+                title: 'How many days of editing are required?',
+                pseudoTitle: 'Editing',
+                options: [{
+                    title: 'No editing, a filming-only project',
+                    range: {
+                        min: 0,
+                        max: 0
+                    }
+                }, {
+                    title: 'One to two days of editing',
+                    range: {
+                        min: 800,
+                        max: 3200
+                    },
+                    default: true
+                }, {
+                    title: 'Three to five days of editing',
+                    range: {
+                        min: 2400,
+                        max: 8000
+                    }
+                }, {
+                    title: 'Five to nine days of editing',
+                    range: {
+                        min: 4000,
+                        max: 14000
+                    }
+                }, {
+                    title: 'Ten days of editing',
+                    range: {
+                        min: 8000,
+                        max: 20000
+                    }
+                }],
+            }, {
+                questionNumber: 13,
+                hint: '',
+                title: ' Is there special animation or special effects required?',
+                pseudoTitle: 'Animation & Special Effects',
+                options: [{
+                    title: 'No animation / fx are required beyond simple graphics and text',
+                    range: {
+                        min: 0,
+                        max: 0
+                    },
+                    default: true
+                }, {
+                    title: 'One to two days of animation / fx',
+                    range: {
+                        min: 800,
+                        max: 3200
+                    }
+                }, {
+                    title: 'Three to five days of animation / fx',
+                    range: {
+                        min: 2400,
+                        max: 8000
+                    }
+                }, {
+                    title: 'Five to nine days of animation / fx',
+                    range: {
+                        min: 4000,
+                        max: 14000
+                    }
+                }, {
+                    title: 'Ten days or more of animation / fx',
+                    range: {
+                        min: 8000,
+                        max: 20000
+                    }
+                }],
+            }, {
+                questionNumber: 14,
+                hint: '',
+                title: 'Is music required for your project?',
+                pseudoTitle: 'Music',
+                options: [{
+                    title: 'No music is required for this project',
+                    range: {
+                        min: 0,
+                        max: 0
+                    }
+                }, {
+                    title: 'A sound track is required',
+                    range: {
+                        min: 200,
+                        max: 800
+                    },
+                    default: true
+                }, {
+                    title: 'Specialized production music is required',
+                    range: {
+                        min: 500,
+                        max: 1500
+                    }
+                }, {
+                    title: 'Custom music is required',
+                    range: {
+                        min: 2000,
+                        max: 10000
+                    }
+                }],
+            }, {
+                questionNumber: 15,
+                hint: '',
+                title: 'Is voice-over required for this project?',
+                pseudoTitle: 'Voice-Over',
+                options: [{
+                    title: 'No voice-over is need for this project',
+                    range: {
+                        min: 0,
+                        max: 0
+                    },
+                    default: true
+                }, {
+                    title: 'We will supply the audio for voice-over',
+                    range: {
+                        min: 0,
+                        max: 0
+                    }
+                }, {
+                    title: 'We will supply the voice-over talent',
+                    range: {
+                        min: 200,
+                        max: 800
+                    }
+                }, {
+                    title: 'Professional voice-over talent is required',
+                    range: {
+                        min: 400,
+                        max: 1000
+                    }
+                }, {
+                    title: 'Celebrity Voice-over talent is required',
+                    range: {
+                        min: 1000,
+                        max: 10000
+                    }
+                }],
+            }, {
+                questionNumber: 16,
+                hint: '',
+                title: 'Is specialized audio work required?',
+                pseudoTitle: 'Audio and Foley',
+                options: [{
+                    title: 'No specialized audio work is needed',
+                    range: {
+                        min: 0,
+                        max: 0
+                    }
+                }, {
+                    title: 'Some audio work is required',
+                    range: {
+                        min: 500,
+                        max: 1500
+                    },
+                    default: true
+                }, {
+                    title: 'A moderate amount of audio work is required',
+                    range: {
+                        min: 1000,
+                        max: 25000
+                    }
+                }, {
+                    title: 'A great deal of audio work is required',
+                    range: {
+                        min: 2000,
+                        max: 5000
+                    }
+                }],
+            }, {
+                questionNumber: 17,
+                hint: '',
+                title: 'Stock footage, photos, illustrations and graphics?',
+                pseudoTitle: 'Stock Images and Footage',
+                options: [{
+                    title: 'No stock footage or photos are required',
+                    range: {
+                        min: 0,
+                        max: 0
+                    }
+                }, {
+                    title: 'Basic photos and /or stock footage is needed',
+                    range: {
+                        min: 200,
+                        max: 1000
+                    },
+                    default: true
+                }, {
+                    title: 'Premium phtotos or stock footage is needed',
+                    range: {
+                        min: 500,
+                        max: 5000
+                    }
+                }],
+            }]
+        }]
     }, {
         title: 'High-End',
         sections: [],
