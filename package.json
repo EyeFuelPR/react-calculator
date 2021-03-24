@@ -80,7 +80,7 @@
   "scripts": {
     "start": "yarn build && http-server build -p $PORT",
     "dev": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js —-max-old-space-size=500",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
