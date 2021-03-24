@@ -12,6 +12,7 @@ export interface IOption {
 export interface IQuestion {
     hint: string;
     title: string;
+    pseudoTitle: string;
     options: IOption[];
 }
 
@@ -28,12 +29,14 @@ export interface ITab {
 export interface IQuestionnaire {
     currency: string;
     title: string;
+    estimatorTitle: string;
     tabs: ITab[];
 }
 
 export const questionnaire: IQuestionnaire = {
     currency: '$',
     title: 'Video Production Cost Calculator',
+    estimatorTitle: 'Video Production Cost Range',
     tabs: [{
         title: 'Low-Cost',
         sections: [{
@@ -41,6 +44,7 @@ export const questionnaire: IQuestionnaire = {
             questions: [{
                 hint: `Pre-production is the most imporant phase of video production. If you don't have the right concept, script and storyboard in place it doesn't matter how well you film and edit your project. 'Creative' is never the goal. 'Creative' is a tool you use to engage your audience and ultimately achieve your objective. You start the production process by developing an idea or concept that helps you achieve your objective. You then build a script and you build a storyboard to explain what happens throughout the video. What are the important elements, situations, actions, text, animations, conversations, special effects, etc. that happen during the video? All of this should be outlined in detail in the storyboard. The storyboard is where you validate your idea, your script and everything you plan on showing in the video with your customer before you start production.`,
                 title: '1. Do you require a concept, script and storyboard?',
+                pseudoTitle: 'Concept or Storyboard',
                 options: [{
                     default: true,
                     title: 'We will supply the concept and script',
@@ -70,6 +74,7 @@ export const questionnaire: IQuestionnaire = {
             }, {
                 hint: `Pre-production is the most imporant phase of video production. If you don't have the right concept, script and storyboard in place it doesn't matter how well you film and edit your project. 'Creative' is never the goal. 'Creative' is a tool you use to engage your audience and ultimately achieve your objective. You start the production process by developing an idea or concept that helps you achieve your objective. You then build a script and you build a storyboard to explain what happens throughout the video. What are the important elements, situations, actions, text, animations, conversations, special effects, etc. that happen during the video? All of this should be outlined in detail in the storyboard. The storyboard is where you validate your idea, your script and everything you plan on showing in the video with your customer before you start production.`,
                 title: '2. Who will handle the project scheduling and the admin?',
+                pseudoTitle: 'Project Management',
                 options: [{
                     default: true,
                     title: 'We will handle all schedulintg and admin',
@@ -102,6 +107,7 @@ export const questionnaire: IQuestionnaire = {
             questions: [{
                 hint: 'How many people do you need to shoot your video? What camera, lighting and audio equipment will they require? What skills and what support crew are needed to do the job right? There are two critical elements that determine the success of any shoot: The expertise of the entire crew and time. A top notch crew will perfrom miracles if they have enough time to do their jobs properly. On smaller productions time is always a factor - budgets are low and the client is often not willing to pay for the time it takes to do the job well. On larger projects budgets are often greater and their is more lattitude to bring in the best people for the job and allow them the time to do the job properly.',
                 title: '3. What type of film crew do you need for your shoot?',
+                pseudoTitle: 'Film Crew',
                 options: [{
                     title: `We don't need a camera for this video project`,
                     range: {
@@ -131,6 +137,7 @@ export const questionnaire: IQuestionnaire = {
             }, {
                 hint: '',
                 title: '4. How many days of shooting are required?',
+                pseudoTitle: 'Shooting Days',
                 options: [{
                     title: 'Half day of shooting',
                     range: 'Half day',
@@ -148,6 +155,7 @@ export const questionnaire: IQuestionnaire = {
             }, {
                 hint: '',
                 title: '5. Do you need a studio or other controlled shooting space that you cannot provide?',
+                pseudoTitle: 'Studio Space',
                 options: [{
                     default: true,
                     title: 'We will shoot at our location',
@@ -169,8 +177,9 @@ export const questionnaire: IQuestionnaire = {
                     }
                 }]
             }, {
-                title: '6. Do you require a teleprompter and operator?',
                 hint: '',
+                title: '6. Do you require a teleprompter and operator?',
+                pseudoTitle: 'Telepompter',
                 options: [{
                     title: `No, we don't need a teleprompter`,
                     range: {
@@ -198,8 +207,9 @@ export const questionnaire: IQuestionnaire = {
                     }
                 }]
             }, {
-                title: '7. Do you require on-camera talent?',
                 hint: '',
+                title: '7. Do you require on-camera talent?',
+                pseudoTitle: 'Talent',
                 options: [{
                     title: `We don't require on-camera talent`,
                     range: {
@@ -233,8 +243,9 @@ export const questionnaire: IQuestionnaire = {
                     }
                 }]
             }, {
-                title: '8. How many days of shooting are needed for talent?',
                 hint: '',
+                title: '8. How many days of shooting are needed for talent?',
+                pseudoTitle: 'Talent Shooting Days',
                 options: [{
                     title: 'Half day of shooting',
                     range: 'Half day'
@@ -253,8 +264,9 @@ export const questionnaire: IQuestionnaire = {
         }, {
             title: 'Post-Production',
             questions: [{
-                title: '9. How many days of editing are required?',
                 hint: '',
+                title: '9. How many days of editing are required?',
+                pseudoTitle: 'Editing',
                 options: [{
                     title: 'No editing needed, we will take care of all post-production',
                     range: {
@@ -288,8 +300,9 @@ export const questionnaire: IQuestionnaire = {
                     }
                 }]
             }, {
-                title: '10. Is there special animation or graphics required?',
                 hint: '',
+                title: '10. Is there special animation or graphics required?',
+                pseudoTitle: 'Animation / Graphics',
                 options: [{
                     title: 'No animation is required beyond simple graphics and text',
                     range: {
@@ -323,8 +336,9 @@ export const questionnaire: IQuestionnaire = {
                     },
                 }]
             }, {
-                title: '11. Is music required for your project?',
                 hint: '',
+                title: '11. Is music required for your project?',
+                pseudoTitle: 'Music',
                 options: [{
                     title: 'No music is required for this project',
                     range: {
@@ -336,7 +350,8 @@ export const questionnaire: IQuestionnaire = {
                     range: {
                         min: 25,
                         max: 100,
-                    }
+                    },
+                    default: true,
                 }, {
                     title: 'A specific type of music is needed for this project',
                     range: {
@@ -345,8 +360,9 @@ export const questionnaire: IQuestionnaire = {
                     }
                 }]
             }, {
-                title: '12. Is voice-over required for this project?',
                 hint: '',
+                title: '12. Is voice-over required for this project?',
+                pseudoTitle: 'Voice-Over',
                 options: [{
                     title: 'No voice-over is need for this project',
                     range: {
@@ -374,8 +390,9 @@ export const questionnaire: IQuestionnaire = {
                     },
                 }]
             }, {
-                title: '13. Do you need stock footage or photos?',
                 hint: '',
+                title: '13. Do you need stock footage or photos?',
+                pseudoTitle: 'Stock photos and images',
                 options: [{
                     title: 'No stock footage or photos are required',
                     range: {

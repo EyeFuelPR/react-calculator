@@ -13,7 +13,7 @@ export class Sections extends React.PureComponent<IProps> {
         return sections.map((section, index) => (
             <div key={index} style={{ padding: 20, border: '1px solid #e5e5e5', borderTop: 0 }}>
                 <h4>{ section.title }</h4>
-                <Questions questions={section.questions}/>
+                <Questions questions={section.questions} sectionID={index}/>
             </div>
         ))
     }

@@ -4,6 +4,7 @@ import { IOption } from '../data/questionnaire';
 
 interface IProps {
     options: IOption[];
+    onOptionSelected: (selectedOptionIndex: number) => void;
 }
 
 interface IState {
@@ -55,6 +56,6 @@ export class Options extends React.PureComponent<IProps, IState> {
     private onCheckboxClicked = (selectedOptionIndex: number) => {
         this.setState({
             selectedOptionIndex,
-        })
+        }, () => this.props.onOptionSelected(selectedOptionIndex))
     }
 }
