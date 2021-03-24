@@ -8,28 +8,21 @@ import { Options } from './Options';
 interface IProps {
     questions: IQuestion[],
     sectionID: number;
+    expandedQuestionNumber: number;
+    onQuestionExpanded: (questionNumber: number) => void;
 }
 
-interface IState {
-    expandedIndex: number;
-}
-
-export class Questions extends React.PureComponent<IProps, IState> {
+export class Questions extends React.PureComponent<IProps> {
     static contextType = EstimatorContext;
 
-    public state: IState = {
-        expandedIndex: -1,
-    }
-
     public render() {
-        const { questions } = this.props;
-        const { expandedIndex } = this.state;
+        const { questions, expandedQuestionNumber } = this.props;
         return questions.map((question, index) => {
-            const isCollapsed = index !== expandedIndex;
+            const isCollapsed = question.questionNumber !== expandedQuestionNumber;
             return (
                 <div key={index} style={{ marginBottom: isCollapsed ? 20 : 40, border: '1px solid #e5e5e5', padding: 10 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <p className='font-weight-bold' style={{ cursor: 'pointer', marginBottom: 0 }} onClick={() => this.onToggle(index)}>{ question.title }</p>
+                        <p className='font-weight-bold' style={{ cursor: 'pointer', marginBottom: 0 }} onClick={() => this.onToggle(index)}>{ question.questionNumber }. { question.title }</p>
                         <OverlayTrigger
                             key='right'
                             placement='right'
@@ -51,12 +44,10 @@ export class Questions extends React.PureComponent<IProps, IState> {
     }
 
     private onToggle = (index: number) => {
-        this.setState({
-            expandedIndex: index,
-        }, () => {
-            const defaultAnswerIndex = this.props.questions[index].options.findIndex((option) => option.default);
-            this.onDefaultOptionSelected(index, defaultAnswerIndex);
-        })
+        const question = this.props.questions[index];
+        this.props.onQuestionExpanded(question.questionNumber);
+        const defaultAnswerIndex = question.options.findIndex((option) => option.default);
+        this.onDefaultOptionSelected(index, defaultAnswerIndex);
     }
 
     private onOptionSelected = (questionIndex: number, selectedOptionIndex: number) => {
