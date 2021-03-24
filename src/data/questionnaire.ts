@@ -168,6 +168,234 @@ export const questionnaire: IQuestionnaire = {
                         min: 200,
                     }
                 }]
+            }, {
+                title: '6. Do you require a teleprompter and operator?',
+                hint: '',
+                options: [{
+                    title: `No, we don't need a teleprompter`,
+                    range: {
+                        max: 0,
+                        min: 0,
+                    },
+                    default: true,
+                }, {
+                    title: 'We need a teleprompter and operator for half day',
+                    range: {
+                        min: 150,
+                        max: 350,
+                    }
+                }, {
+                    title: 'We need a teleprompter and operator for full day',
+                    range: {
+                        min: 250,
+                        max: 500,
+                    }
+                }, {
+                    title: 'We need a teleprompter and operator for two days',
+                    range: {
+                        min: 400,
+                        max: 800,
+                    }
+                }]
+            }, {
+                title: '7. Do you require on-camera talent?',
+                hint: '',
+                options: [{
+                    title: `We don't require on-camera talent`,
+                    range: {
+                        min: 0,
+                        max: 0,
+                    },
+                    default: true,
+                }, {
+                    title: 'We will supply all on-camera talent',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    }
+                }, {
+                    title: 'We need a low-cost presenter',
+                    range: {
+                        min: 50,
+                        max: 250,
+                    }
+                }, {
+                    title: 'We need a professional Presenter',
+                    range: {
+                        min: 250,
+                        max: 1000,
+                    }
+                }, {
+                    title: 'We need an actor',
+                    range: {
+                        min: 500,
+                        max: 1500,
+                    }
+                }]
+            }, {
+                title: '8. How many days of shooting are needed for talent?',
+                hint: '',
+                options: [{
+                    title: 'Half day of shooting',
+                    range: 'Half day'
+                }, {
+                    title: 'Full day of shooting',
+                    range: '1 day',
+                    default: true,
+                }, {
+                    title: 'Two days of shooting',
+                    range: '2 days',
+                }, {
+                    title: 'Three days of shooting',
+                    range: '3 days',
+                }]
+            }]
+        }, {
+            title: 'Post-Production',
+            questions: [{
+                title: '9. How many days of editing are required?',
+                hint: '',
+                options: [{
+                    title: 'No editing needed, we will take care of all post-production',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    }
+                }, {
+                    title: 'One day of editing',
+                    range: {
+                        min: 200,
+                        max: 750,
+                    },
+                    default: true,
+                }, {
+                    title: 'Two days of editing',
+                    range: {
+                        min: 400,
+                        max: 1500,
+                    }
+                }, {
+                    title: 'Three days of editing',
+                    range: {
+                        min: 600,
+                        max: 2250,
+                    }
+                }, {
+                    title: 'Four days of editing',
+                    range: {
+                        min: 800,
+                        max: 3000,
+                    }
+                }]
+            }, {
+                title: '10. Is there special animation or graphics required?',
+                hint: '',
+                options: [{
+                    title: 'No animation is required beyond simple graphics and text',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    },
+                    default: true,
+                }, {
+                    title: 'A half day of graphic creation / animation',
+                    range: {
+                        min: 100,
+                        max: 400,
+                    },
+                }, {
+                    title: 'One day of graphic creation / animation',
+                    range: {
+                        min: 200,
+                        max: 600,
+                    },
+                }, {
+                    title: 'Two days of graphic creation / animation',
+                    range: {
+                        min: 400,
+                        max: 1200,
+                    },
+                }, {
+                    title: 'Three days of graphic creation / animation',
+                    range: {
+                        min: 600,
+                        max: 1800,
+                    },
+                }]
+            }, {
+                title: '11. Is music required for your project?',
+                hint: '',
+                options: [{
+                    title: 'No music is required for this project',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    }
+                }, {
+                    title: 'A generic music track is needed',
+                    range: {
+                        min: 25,
+                        max: 100,
+                    }
+                }, {
+                    title: 'A specific type of music is needed for this project',
+                    range: {
+                        min: 100,
+                        max: 300,
+                    }
+                }]
+            }, {
+                title: '12. Is voice-over required for this project?',
+                hint: '',
+                options: [{
+                    title: 'No voice-over is need for this project',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    },
+                    default: true,
+                }, {
+                    title: 'We will supply the audio for the project',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    },
+                }, {
+                    title: 'No voice-over is need for this project',
+                    range: {
+                        min: 100,
+                        max: 200,
+                    },
+                }, {
+                    title: 'Professional Voice-over talent is required',
+                    range: {
+                        min: 250,
+                        max: 500,
+                    },
+                }]
+            }, {
+                title: '13. Do you need stock footage or photos?',
+                hint: '',
+                options: [{
+                    title: 'No stock footage or photos are required',
+                    range: {
+                        min: 0,
+                        max: 0,
+                    },
+                    default: true,
+                }, {
+                    title: 'Basic photos or stock footage is needed',
+                    range: {
+                        min: 50,
+                        max: 200,
+                    }
+                }, {
+                    title: 'Premium phtotos or stock footage is needed',
+                    range: {
+                        min: 100,
+                        max: 400,
+                    }
+                }]
             }]
         }]
     }, {
