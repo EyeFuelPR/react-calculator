@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { IRange } from '../data/questionnaire';
+import styles from './Estimator.module.css';
 
 export interface ISelectedService {
     title: string;
@@ -25,7 +26,7 @@ export class Estimator extends React.PureComponent<IProps> {
                 <div className='card-header'>
                     { title } ({ currency }{ totalMin } - { currency }{ totalMax })
                 </div>
-                <div style={{ height: 'calc(100vh - 105px)', overflowY: 'scroll' }}>
+                <div className={styles.CardBody}>
                     {
                         servicesArray.map((service, index) => {
                             const { min, max } = service.range as IRange;
