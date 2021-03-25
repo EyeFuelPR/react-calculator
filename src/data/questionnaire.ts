@@ -9,9 +9,14 @@ export interface IOption {
     default?: boolean;
 }
 
+export interface IHint {
+    title: string;
+    description: string;
+}
+
 export interface IQuestion {
     questionNumber: number;
-    hint: string;
+    hint: IHint;
     title: string;
     pseudoTitle: string;
     options: IOption[];
@@ -44,7 +49,10 @@ export const questionnaire: IQuestionnaire = {
             title: 'Pre-Production',
             questions: [{
                 questionNumber: 1,
-                hint: `Pre-production is the most imporant phase of video production. If you don't have the right concept, script and storyboard in place it doesn't matter how well you film and edit your project. 'Creative' is never the goal. 'Creative' is a tool you use to engage your audience and ultimately achieve your objective. You start the production process by developing an idea or concept that helps you achieve your objective. You then build a script and you build a storyboard to explain what happens throughout the video. What are the important elements, situations, actions, text, animations, conversations, special effects, etc. that happen during the video? All of this should be outlined in detail in the storyboard. The storyboard is where you validate your idea, your script and everything you plan on showing in the video with your customer before you start production.`,
+                hint: {
+                    title: 'Do you have a concept and storyboard in place?',
+                    description: `Pre-production is the most imporant phase of video production. If you don't have the right concept, script and storyboard in place it doesn't matter how well you film and edit your project. 'Creative' is never the goal. 'Creative' is a tool you use to engage your audience and ultimately achieve your objective. You start the production process by developing an idea or concept that helps you achieve your objective. You then build a script and you build a storyboard to explain what happens throughout the video. What are the important elements, situations, actions, text, animations, conversations, special effects, etc. that happen during the video? All of this should be outlined in detail in the storyboard. The storyboard is where you validate your idea, your script and everything you plan on showing in the video with your customer before you start production.`
+                },
                 title: 'Do you require a concept, script and storyboard?',
                 pseudoTitle: 'Concept or Storyboard',
                 options: [{
@@ -75,7 +83,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 2,
-                hint: `Pre-production is the most imporant phase of video production. If you don't have the right concept, script and storyboard in place it doesn't matter how well you film and edit your project. 'Creative' is never the goal. 'Creative' is a tool you use to engage your audience and ultimately achieve your objective. You start the production process by developing an idea or concept that helps you achieve your objective. You then build a script and you build a storyboard to explain what happens throughout the video. What are the important elements, situations, actions, text, animations, conversations, special effects, etc. that happen during the video? All of this should be outlined in detail in the storyboard. The storyboard is where you validate your idea, your script and everything you plan on showing in the video with your customer before you start production.`,
+                hint: {
+                    title: 'How large is the production / project management team on this project?',
+                    description: 'Some productions are small and may only require one or two people. Others require large teams with specialized skills to carry out specialized tasks. Video projects have a lot of moving parts and someone needs to coordinate all of the required activities. It must be clear from the start who ownes this process. Setting up planning meetings, project management, acquiring permits and permissions, scheduling crew, coordinating on-camera personnel, scheduling and managing milestones, etc. - all of these tasks require coordination and someone has to be identified as the owner of all of these activities.'
+                },
                 title: 'Who will handle the project scheduling and the admin?',
                 pseudoTitle: 'Project Management',
                 options: [{
@@ -109,7 +120,10 @@ export const questionnaire: IQuestionnaire = {
             title: 'Production',
             questions: [{
                 questionNumber: 3,
-                hint: 'How many people do you need to shoot your video? What camera, lighting and audio equipment will they require? What skills and what support crew are needed to do the job right? There are two critical elements that determine the success of any shoot: The expertise of the entire crew and time. A top notch crew will perfrom miracles if they have enough time to do their jobs properly. On smaller productions time is always a factor - budgets are low and the client is often not willing to pay for the time it takes to do the job well. On larger projects budgets are often greater and their is more lattitude to bring in the best people for the job and allow them the time to do the job properly.',
+                hint: {
+                    title: 'What type of film crew do you need for your shoot?',
+                    description: 'How many people do you need to shoot your video? What camera, lighting and audio equipment will they require? What skills and what support crew are needed to do the job right? There are two critical elements that determine the success of any shoot: The expertise of the entire crew and time. A top notch crew will perfrom miracles if they have enough time to do their jobs properly. On smaller productions time is always a factor - budgets are low and the client is often not willing to pay for the time it takes to do the job well. On larger projects budgets are often greater and their is more lattitude to bring in the best people for the job and allow them the time to do the job properly.'
+                },
                 title: 'What type of film crew do you need for your shoot?',
                 pseudoTitle: 'Film Crew',
                 options: [{
@@ -140,7 +154,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 4,
-                hint: '',
+                hint: {
+                    title: 'How many days of shooting are required?',
+                    description: `How many scenes / set-ups, how many different locations are you shooting at and what's involved with each scene. Shooting days are always a negotiation as production teams want more time and the client wants the project completed done in less time.`
+                },
                 title: 'How many days of shooting are required?',
                 pseudoTitle: 'Shooting Days',
                 options: [{
@@ -159,7 +176,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 5,
-                hint: '',
+                hint: {
+                    title: 'Do you need a studio or other controlled  shooting space that you cannot provide?',
+                    description: 'Where are you shooting? Do you need a  sound studio or a closed-set? Are you shooting against a green or white screen? Are you shooting on-location somewhere? What location suits the script?'
+                },
                 title: 'Do you need a studio or other controlled shooting space that you cannot provide?',
                 pseudoTitle: 'Studio Space',
                 options: [{
@@ -184,7 +204,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 6,
-                hint: '',
+                hint: {
+                    title: 'Do you require a teleprompter and operator?',
+                    description: `A teleprompter can save a shoot. Even the most experienced speaker can be intimidated by lights and camera. It's true that you can often tell when someone is reading from a teleprompter but that may still be preferable to the agony of a shoot spiraling out of control because the CEO can't remember his lines.`
+                },
                 title: 'Do you require a teleprompter and operator?',
                 pseudoTitle: 'Telepompter',
                 options: [{
@@ -215,7 +238,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 7,
-                hint: '',
+                hint: {
+                    title: 'Do you require on-camera talent?',
+                    description: 'Do you need to hire professional presenters, actors or models to improve the quality of your presentation? Not everyone is good on camera. You may need to make difficult decisions about who should represent your company. In a broadcast commercial quite often it is not someone in your company. Even in a corporate video you may decide that hiring outside talent is the best choice.'
+                },
                 title: 'Do you require on-camera talent?',
                 pseudoTitle: 'Talent',
                 options: [{
@@ -252,7 +278,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 8,
-                hint: '',
+                hint: {
+                    title: 'How many days of shooting are needed for talent?',
+                    description: 'Your talent may or may not be needed for shooting day. A well managed shoot can save everyone time and money.'
+                },
                 title: 'How many days of shooting are needed for talent?',
                 pseudoTitle: 'Talent Shooting Days',
                 options: [{
@@ -274,7 +303,10 @@ export const questionnaire: IQuestionnaire = {
             title: 'Post-Production',
             questions: [{
                 questionNumber: 9,
-                hint: '',
+                hint: {
+                    title: 'How many days of editing are required?',
+                    description: 'Editing time is the most difficult thing to estimate in a video project. The ratio of shooting time to editing time can be one-to-one or it can be one-to-twenty or more depending on how the video was shot, how much footage was shot, what type of colour grading is required, how long the finished piece is, how many possible client changes might be needed and a host of other variables.'
+                },
                 title: 'How many days of editing are required?',
                 pseudoTitle: 'Editing',
                 options: [{
@@ -311,7 +343,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 10,
-                hint: '',
+                hint: {
+                    title: 'Are special animation or special effects required?',
+                    description: 'Some video productions are 100% animation and some require no special effects or animation. High quality animation and effects can be very expensieve to produce.'
+                },
                 title: 'Is there special animation or graphics required?',
                 pseudoTitle: 'Animation / Graphics',
                 options: [{
@@ -348,7 +383,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 11,
-                hint: '',
+                hint: {
+                    title: 'Is music required for your project?',
+                    description: `Music is the single most underestimated and under-rated element of any video production. Music set's the tone, the pace and the mood for the entire video. Music tells you how to feel about the video.  Music is very improtant.`
+                },
                 title: 'Is music required for your project?',
                 pseudoTitle: 'Music',
                 options: [{
@@ -373,7 +411,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 12,
-                hint: '',
+                hint: {
+                    title: 'Is voice-over required for this project?',
+                    description: 'Professional voice-over can add a great deal of substance and professionalism to your video.'
+                },
                 title: 'Is voice-over required for this project?',
                 pseudoTitle: 'Voice-Over',
                 options: [{
@@ -404,7 +445,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 13,
-                hint: '',
+                hint: {
+                    title: 'Stock footage,  photos, illustrations and graphics.',
+                    description: 'Do you need specialized media to supplement your video? Stock photos, stock video, specialized illustrations or graphics may be required to complete the video.'
+                },
                 title: 'Do you need stock footage or photos?',
                 pseudoTitle: 'Stock photos and images',
                 options: [{
@@ -435,7 +479,10 @@ export const questionnaire: IQuestionnaire = {
             title: 'Pre-Production',
             questions: [{
                 questionNumber: 1,
-                hint: '',
+                hint: {
+                    title: 'Do you have a concept and storyboard in place?',
+                    description: `Pre-production is the most imporant phase of video production. If you don't have the right concept, script and storyboard in place it doesn't matter how well you film and edit your project. 'Creative' is never the goal. 'Creative' is a tool you use to engage your audience and ultimately achieve your objective. You start the production process by developing an idea or concept that helps you achieve your objective. You then build a script and you build a storyboard to explain what happens throughout the video. What are the important elements, situations, actions, text, animations, conversations, special effects, etc. that happen during the video? All of this should be outlined in detail in the storyboard. The storyboard is where you validate your idea, your script and everything you plan on showing in the video with your customer before you start production.`
+                },
                 title: 'Do you have a concept and storyboard in place?',
                 pseudoTitle: 'Concept and Storyboard',
                 options: [{
@@ -460,7 +507,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 2,
-                hint: '',
+                hint: {
+                    title: 'How large is the production / project management team on this project?',
+                    description: 'Some productions are small and may only require one or two people. Others require large teams with specialized skills to carry out specialized tasks. Video projects have a lot of moving parts and someone needs to coordinate all of the required activities. It must be clear from the start who ownes this process. Setting up planning meetings, project management, acquiring permits and permissions, scheduling crew, coordinating on-camera personnel, scheduling and managing milestones, etc. - all of these tasks require coordination and someone has to be identified as the owner of all of these activities.'
+                },
                 title: 'How much project management and scheduling is required?',
                 pseudoTitle: 'Project Management',
                 options: [{
@@ -488,7 +538,10 @@ export const questionnaire: IQuestionnaire = {
             title: 'Production',
             questions: [{
                 questionNumber: 3,
-                hint: '',
+                hint: {
+                    title: 'What type of film crew do you need for your shoot?',
+                    description: 'How many people do you need to shoot your video? What camera, lighting and audio equipment will they require? What skills and what support crew are needed to do the job right? There are two critical elements that determine the success of any shoot: The expertise of the entire crew and time. A top notch crew will perfrom miracles if they have enough time to do their jobs properly. On smaller productions time is always a factor - budgets are low and the client is often not willing to pay for the time it takes to do the job well. On larger projects budgets are often greater and their is more lattitude to bring in the best people for the job and allow them the time to do the job properly.'
+                },
                 title: 'What type of film crew do you need for your shoot?',
                 pseudoTitle: 'Film Crew',
                 options: [{
@@ -525,7 +578,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 4,
-                hint: '',
+                hint: {
+                    title: 'How many days of shooting are required?',
+                    description: `How many scenes / set-ups, how many different locations are you shooting at and what's involved with each scene. Shooting days are always a negotiation as production teams want more time and the client wants the project completed done in less time.`
+                },
                 title: 'How many days of shooting are required?',
                 pseudoTitle: 'Days of Shooting',
                 options: [{
@@ -547,7 +603,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 5,
-                hint: '',
+                hint: {
+                    title: 'Do you require special production equipment?',
+                    description: 'Your budget and the complexity of the shoot will determine what equipment is required for your video. Do you need a jib, a track-dolly, a crane, specialized lighting, or any other type of specialized gear to get the shots you require. Most of thes tools also require special handling.'
+                },
                 title: 'Do you require special production equipment?',
                 pseudoTitle: 'Special Production Equipment',
                 options: [{
@@ -572,7 +631,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 6,
-                hint: '',
+                hint: {
+                    title: 'Do you need a studio or other controlled  shooting space that you cannot provide?',
+                    description: 'Where are you shooting? Do you need a  sound studio or a closed-set? Are you shooting against a green or white screen? Are you shooting on-location somewhere? What location suits the script?'
+                },
                 title: 'Do you need a studio or other controlled shooting space that you cannot provide?',
                 pseudoTitle: 'Studio',
                 options: [{
@@ -597,7 +659,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 7,
-                hint: '',
+                hint: {
+                    title: 'Do you require a teleprompter and operator?',
+                    description: `A teleprompter can save a shoot. Even the most experienced speaker can be intimidated by lights and camera. It's true that you can often tell when someone is reading from a teleprompter but that may still be preferable to the agony of a shoot spiraling out of control because the CEO can't remember his lines.`
+                },
                 title: 'Do you require a teleprompter and operator?',
                 pseudoTitle: 'Teleprompter',
                 options: [{
@@ -634,7 +699,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 8,
-                hint: '',
+                hint: {
+                    title: 'Do you require on-camera talent?',
+                    description: 'Do you need to hire professional presenters, actors or models to improve the quality of your presentation? Not everyone is good on camera. You may need to make difficult decisions about who should represent your company. In a broadcast commercial quite often it is not someone in your company. Even in a corporate video you may decide that hiring outside talent is the best choice.'
+                },
                 title: 'Do you require on-camera talent?',
                 pseudoTitle: 'Talent',
                 options: [{
@@ -671,7 +739,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 9,
-                hint: '',
+                hint: {
+                    title: 'How many days of shooting are needed for talent?',
+                    description: 'Your talent may or may not be needed for shooting day. A well managed shoot can save everyone time and money.'
+                },
                 title: 'How many days of shooting is needed for talent?',
                 pseudoTitle: 'Talent Shooting Days',
                 options: [{
@@ -693,7 +764,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 10,
-                hint: '',
+                hint: {
+                    title: 'Do you require hair, make-up or wardrobe for talent',
+                    description: `On lower cost projects a brush and a container of neutral blush (to remove an oily or sweaty appearance on the subject's face) can go a long way. If you have both the budget and the need then it is a good idea to hire a Hair and Makeup expert to help ensure your subjects look great on camera. It's also a good idea to have them watch the shoot to ensure continuity. On higher-end productions wardrobe is included to ensure the proper look.`
+                },
                 title: 'Do you require hair, make-up or wardrobe for talent?',
                 pseudoTitle: 'Hair & Make-up',
                 options: [{
@@ -724,7 +798,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 11,
-                hint: '',
+                hint: {
+                    title: 'Location costs and permissions.',
+                    description: 'Depending on what you are shooting you may want to pay for the use of a specific location. While this option may seem like an extravagance, it could make the difference between a dull video and an engaging video. A talking head (all things being equal) is more interesting to watch if shot against an interesting backdrop. Contact your local film office - they should have a list of possible locations to shoot in your area for a fee. Costs range considerably - you can pay your local coffee shop a couple bucks to shoot during a quiet time or you can get access to a local museum for thousands of dollars... or you can pay to close down your town at rush-hour if your budget allows.'
+                },
                 title: 'Location and Permission costs',
                 pseudoTitle: 'Location costs',
                 options: [{
@@ -752,7 +829,10 @@ export const questionnaire: IQuestionnaire = {
             title: 'Post_Production',
             questions: [{
                 questionNumber: 12,
-                hint: '',
+                hint: {
+                    title: 'How many days of editing are required?',
+                    description: 'Editing time is the most difficult thing to estimate in a video project. The ratio of shooting time to editing time can be one-to-one or it can be one-to-twenty or more depending on how the video was shot, how much footage was shot, what type of colour grading is required, how long the finished piece is, how many possible client changes might be needed and a host of other variables.'
+                },
                 title: 'How many days of editing are required?',
                 pseudoTitle: 'Editing',
                 options: [{
@@ -789,7 +869,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 13,
-                hint: '',
+                hint: {
+                    title: 'Are special animation or special effects required?',
+                    description: 'Some video productions are 100% animation and some require no special effects or animation. High quality animation and effects can be very expensieve to produce.'
+                },
                 title: ' Is there special animation or special effects required?',
                 pseudoTitle: 'Animation & Special Effects',
                 options: [{
@@ -826,7 +909,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 14,
-                hint: '',
+                hint: {
+                    title: 'Is music required for your project?',
+                    description: `Music is the single most underestimated and under-rated element of any video production. Music set's the tone, the pace and the mood for the entire video. Music tells you how to feel about the video.  Music is very improtant.`
+                },
                 title: 'Is music required for your project?',
                 pseudoTitle: 'Music',
                 options: [{
@@ -857,7 +943,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 15,
-                hint: '',
+                hint: {
+                    title: 'Is voice-over required for this project?',
+                    description: 'Professional voice-over can add a great deal of substance and professionalism to your video.'
+                },
                 title: 'Is voice-over required for this project?',
                 pseudoTitle: 'Voice-Over',
                 options: [{
@@ -894,7 +983,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 16,
-                hint: '',
+                hint: {
+                    title: 'Is specialized audio work required?',
+                    description: 'Beyond recorded voice (either live or voice-over) do you need foley work or other types of specialized music, audio effects or over-dubs?'
+                },
                 title: 'Is specialized audio work required?',
                 pseudoTitle: 'Audio and Foley',
                 options: [{
@@ -925,7 +1017,10 @@ export const questionnaire: IQuestionnaire = {
                 }],
             }, {
                 questionNumber: 17,
-                hint: '',
+                hint: {
+                    title: 'Stock footage,  photos, illustrations and graphics.',
+                    description: 'Do you need specialized media to supplement your video. Stock photos, stock video, specialized illustrations or graphics may be required to complete the video.'
+                },
                 title: 'Stock footage, photos, illustrations and graphics?',
                 pseudoTitle: 'Stock Images and Footage',
                 options: [{
@@ -956,7 +1051,10 @@ export const questionnaire: IQuestionnaire = {
             title: 'Pre-Production',
             questions: [{
                 questionNumber: 1,
-                hint: '',
+                hint: {
+                    title: 'Do you have a concept and storyboard in place?',
+                    description: `Pre-production is the most imporant phase of video production. If you don't have the right concept, script and storyboard in place it doesn't matter how well you film and edit your project. 'Creative' is never the goal. 'Creative' is a tool you use to engage your audience and ultimately achieve your objective. You start the production process by developing an idea or concept that helps you achieve your objective. You then build a script and you build a storyboard to explain what happens throughout the video. What are the important elements, situations, actions, text, animations, conversations, special effects, etc. that happen during the video? All of this should be outlined in detail in the storyboard. The storyboard is where you validate your idea, your script and everything you plan on showing in the video with your customer before you start production.`
+                },
                 title: 'Do you have a concept and storyboard in place?',
                 pseudoTitle: 'Concept and Storyboard',
                 options: [{
@@ -975,7 +1073,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 2,
-                hint: '',
+                hint: {
+                    title: 'How large is the production / project management team on this project?',
+                    description: 'Some productions are small and may only require one or two people. Others require large teams with specialized skills to carry out specialized tasks. Video projects have a lot of moving parts and someone needs to coordinate all of the required activities. It must be clear from the start who ownes this process. Setting up planning meetings, project management, acquiring permits and permissions, scheduling crew, coordinating on-camera personnel, scheduling and managing milestones, etc. - all of these tasks require coordination and someone has to be identified as the owner of all of these activities.'
+                },
                 title: 'How large is the production / project management team on this project?',
                 pseudoTitle: 'Project Management',
                 options: [{
@@ -1003,7 +1104,10 @@ export const questionnaire: IQuestionnaire = {
             title: 'Production',
             questions: [{
                 questionNumber: 3,
-                hint: '',
+                hint: {
+                    title: 'What type of film crew do you need for your shoot?',
+                    description: 'How many people do you need to shoot your video? What camera, lighting and audio equipment will they require? What skills and what support crew are needed to do the job right? There are two critical elements that determine the success of any shoot: The expertise of the entire crew and time. A top notch crew will perfrom miracles if they have enough time to do their jobs properly. On smaller productions time is always a factor - budgets are low and the client is often not willing to pay for the time it takes to do the job well. On larger projects budgets are often greater and their is more lattitude to bring in the best people for the job and allow them the time to do the job properly.'
+                },
                 title: 'What type of film crew do you need for your shoot?',
                 pseudoTitle: 'Film Crew',
                 options: [{
@@ -1028,7 +1132,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 4,
-                hint: '',
+                hint: {
+                    title: 'What level of video direction is required for the shoot?',
+                    description: 'Who is guiding the vision of the video? Who is in charge of getting the right shots that help tell the story that is your storyboard. Is it your cameraman, your client, a marketing person or a video director. Your budget will determine who plays this role but someone has to be responsible. If you have the budget an experienced director is the best investement you can make after you have created your storyboard.'
+                },
                 title: 'What level of video direction is required for the shoot?',
                 pseudoTitle: 'Direction',
                 options: [{
@@ -1053,7 +1160,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 5,
-                hint: '',
+                hint: {
+                    title: 'How many days of shooting are required?',
+                    description: `How many scenes / set-ups, how many different locations are you shooting at and what's involved with each scene. Shooting days are always a negotiation as production teams want more time and the client wants the project completed done in less time.`
+                },
                 title: 'How many days of shooting are required?',
                 pseudoTitle: 'Shooting Days',
                 options: [{
@@ -1075,7 +1185,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 6,
-                hint: '',
+                hint: {
+                    title: 'Do you require special production equipment?',
+                    description: 'Your budget and the complexity of the shoot will determine what equipment is required for your video. Do you need a jib, a track-dolly, a crane, specialized lighting, or any other type of specialized gear to get the shots you require. Most of thes tools also require special handling.'
+                },
                 title: 'Do you require special production equipment?',
                 pseudoTitle: 'Special Equipment',
                 options: [{
@@ -1100,7 +1213,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 7,
-                hint: '',
+                hint: {
+                    title: 'Do you need a studio or other controlled  shooting space that you cannot provide?',
+                    description: 'Where are you shooting? Do you need a  sound studio or a closed-set? Are you shooting against a green or white screen? Are you shooting on-location somewhere? What location suits the script?'
+                },
                 title: 'Do you need a studio or other controlled shooting space that you cannot provide?',
                 pseudoTitle: 'Studio Space',
                 options: [{
@@ -1125,7 +1241,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 8,
-                hint: '',
+                hint: {
+                    title: 'Do you require a teleprompter and operator?',
+                    description: `A teleprompter can save a shoot. Even the most experienced speaker can be intimidated by lights and camera. It's true that you can often tell when someone is reading from a teleprompter but that may still be preferable to the agony of a shoot spiraling out of control because the CEO can't remember his lines.`
+                },
                 title: 'Do you require a teleprompter and operator?',
                 pseudoTitle: 'Teleprompter',
                 options: [{
@@ -1162,7 +1281,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 9,
-                hint: '',
+                hint: {
+                    title: 'Do you require on-camera talent?',
+                    description: 'Do you need to hire professional presenters, actors or models to improve the quality of your presentation? Not everyone is good on camera. You may need to make difficult decisions about who should represent your company. In a broadcast commercial quite often it is not someone in your company. Even in a corporate video you may decide that hiring outside talent is the best choice.'
+                },
                 title: 'Do you require on-camera talent?',
                 pseudoTitle: 'Talent',
                 options: [{
@@ -1199,7 +1321,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 10,
-                hint: '',
+                hint: {
+                    title: 'Do you require on-camera talent?',
+                    description: 'Do you need to hire professional presenters, actors or models to improve the quality of your presentation? Not everyone is good on camera. You may need to make difficult decisions about who should represent your company. In a broadcast commercial quite often it is not someone in your company. Even in a corporate video you may decide that hiring outside talent is the best choice.'
+                },
                 title: 'How many days of shooting is needed for talent?',
                 pseudoTitle: 'Talent Shooting Days',
                 options: [{
@@ -1221,7 +1346,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 11,
-                hint: '',
+                hint: {
+                    title: 'Do you require hair, make-up or wardrobe for talent?',
+                    description: `On lower cost projects a brush and a container of neutral blush (to remove an oily or sweaty appearance on the subject's face) can go a long way. If you have both the budget and the need then it is a good idea to hire a Hair and Makeup expert to help ensure your subjects look great on camera. It's also a good idea to have them watch the shoot to ensure continuity. On higher-end productions wardrobe is included to ensure the proper look.`
+                },
                 title: 'Do you require hair, make-up or wardrobe for talent?',
                 pseudoTitle: 'Hair & Make-up',
                 options: [{
@@ -1252,7 +1380,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 12,
-                hint: '',
+                hint: {
+                    title: 'Location costs and permissions.',
+                    description: 'Depending on what you are shooting you may want to pay for the use of a specific location. While this option may seem like an extravagance, it could make the difference between a dull video and an engaging video. A talking head (all things being equal) is more interesting to watch if shot against an interesting backdrop. Contact your local film office - they should have a list of possible locations to shoot in your area for a fee. Costs range considerably - you can pay your local coffee shop a couple bucks to shoot during a quiet time or you can get access to a local museum for thousands of dollars... or you can pay to close down your town at rush-hour if your budget allows.'
+                },
                 title: 'Location and Permission costs',
                 pseudoTitle: 'Location costs',
                 options: [{
@@ -1277,7 +1408,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 13,
-                hint: '',
+                hint: {
+                    title: 'Do you require extras for the shoot?',
+                    description: 'Depending on the mood and style of your video you may want to pay people to be in the background. A scene can look rather empty or unnatural without anyone in it.'
+                },
                 title: 'Do you require extras for the shoot?',
                 pseudoTitle: 'Extras',
                 options: [{
@@ -1302,7 +1436,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 14,
-                hint: '',
+                hint: {
+                    title: 'Do you require craft services for talent and crew?',
+                    description: `If you are working on a union shoot there are specific rules set out as to how you feed your crew. Even if you're on a tight budget it's a good idea to keep your team well fueled.`
+                },
                 title: 'Do you require craft services for talent and crew?',
                 pseudoTitle: 'Craft Services',
                 options: [{
@@ -1327,7 +1464,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 15,
-                hint: '',
+                hint: {
+                    title: 'Do you require props, gear or staging for the shoot?',
+                    description: 'Aside from video production equipment are there other special props or pieces of equipment that need to be included as part of the costs? Do you need a special backdrop, rental furniture, a plane or helicopter for an aerial shot or specialized equipment for the shoot? These all have to be factored in to the cost of your production.'
+                },
                 title: 'Do you require props, gear or staging for the shoot?',
                 pseudoTitle: 'Props and staging',
                 options: [{
@@ -1352,7 +1492,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 16,
-                hint: '',
+                hint: {
+                    title: 'Do you require special transportation services for your shoot?',
+                    description: 'The more people and the more gear you use the more likely you are to require special transportation. Moving people and kit efficiently between different shooting setups might make the difference between a decent shoot and a great shoot.'
+                },
                 title: 'Do you require special transportation services for your shoot?',
                 pseudoTitle: 'Transportation',
                 options: [{
@@ -1380,7 +1523,10 @@ export const questionnaire: IQuestionnaire = {
             title: 'Post-Production',
             questions: [{
                 questionNumber: 17,
-                hint: '',
+                hint: {
+                    title: 'How many days of editing are required?',
+                    description: 'Editing time is the most difficult thing to estimate in a video project. The ratio of shooting time to editing time can be one-to-one or it can be one-to-twenty or more depending on how the video was shot, how much footage was shot, what type of colour grading is required, how long the finished piece is, how many possible client changes might be needed and a host of other variables.'
+                },
                 title: 'How many days of editing are required?',
                 pseudoTitle: 'Editing',
                 options: [{
@@ -1411,7 +1557,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 18,
-                hint: '',
+                hint: {
+                    title: 'Are special animation or special effects required?',
+                    description: 'Some video productions are 100% animation and some require no special effects or animation. High quality animation and effects can be very expensieve to produce.'
+                },
                 title: 'Is there special animation or special effects required?',
                 pseudoTitle: 'Animation & Special Effects',
                 options: [{
@@ -1442,7 +1591,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 19,
-                hint: '',
+                hint: {
+                    title: 'Is music required for your project?',
+                    description: `Music is the single most underestimated and under-rated element of any video production. Music set's the tone, the pace and the mood for the entire video. Music tells you how to feel about the video.  Music is very improtant.`
+                },
                 title: 'Is music required for your project?',
                 pseudoTitle: 'Music',
                 options: [{
@@ -1479,7 +1631,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 20,
-                hint: '',
+                hint: {
+                    title: 'Is voice-over required for this project?',
+                    description: 'Professional voice-over can add a great deal of substance and professionalism to your video.'
+                },
                 title: 'Is voice-over required for this project?',
                 pseudoTitle: 'Voice-Over',
                 options: [{
@@ -1510,7 +1665,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 21,
-                hint: '',
+                hint: {
+                    title: 'Is specialized audio work required?',
+                    description: 'Beyond recorded voice (either live or voice-over) do you need foley work or other types of specialized music, audio effects or over-dubs?'
+                },
                 title: 'Is specialized audio work required?',
                 pseudoTitle: 'Audio and Foley',
                 options: [{
@@ -1541,7 +1699,10 @@ export const questionnaire: IQuestionnaire = {
                 }]
             }, {
                 questionNumber: 22,
-                hint: '',
+                hint: {
+                    title: 'Stock footage,  photos, illustrations and graphics.',
+                    description: 'Do you need specialized media to supplement your video. Stock photos, stock video, specialized illustrations or graphics may be required to complete the video.'
+                },
                 title: 'Stock footage, photos, illustrations and graphics?',
                 pseudoTitle: 'Stock Images and Footage',
                 options: [{

@@ -28,7 +28,8 @@ export class Questions extends React.PureComponent<IProps> {
                             placement='right'
                             overlay={
                                 <Tooltip id={'tooltip-right'}>
-                                    { question.hint }
+                                    <strong>{ question.hint.title }</strong>
+                                    <p>{ question.hint.description }</p>
                                 </Tooltip>
                             }
                         >

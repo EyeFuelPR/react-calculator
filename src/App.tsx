@@ -58,6 +58,7 @@ export class App extends React.PureComponent<{}, IState> {
     private onTabClick = (tabIndex: number) => {
         this.setState({
             currentTab: tabIndex,
+            selectedServices: {}
         })
     }
 
