@@ -91,7 +91,7 @@ export const questionnaire: IQuestionnaire = {
                 pseudoTitle: 'Project Management',
                 options: [{
                     default: true,
-                    title: 'We will handle all schedulintg and admin',
+                    title: 'We will handle all scheduling and admin',
                     range: {
                         max: 0,
                         min: 0,
