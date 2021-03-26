@@ -5,7 +5,7 @@ import { Estimator, ISelectedService } from './components/Estimator';
 import { Header } from './components/Header';
 import { Sections } from './components/Sections';
 import { Tabs } from './components/Tabs';
-import { questionnaire } from './data/questionnaire';
+import { IRange, questionnaire } from './data/questionnaire';
 
 interface IState {
     currentTab: number;
@@ -23,6 +23,11 @@ export class App extends React.PureComponent<{}, IState> {
     public render() {
         const { currency, title, tabs, estimatorTitle } = questionnaire;
         const { currentTab, selectedServices, showModal } = this.state;
+
+        const servicesArray = Object.values(selectedServices).sort((a, b) => a.order > b.order ? 1 : -1)
+        const totalMin = servicesArray.reduce((acc, o) => acc + ((o.range as IRange).min || 0), 0);
+        const totalMax = servicesArray.reduce((acc, o) => acc + ((o.range as IRange).max || 0), 0);
+
         return (
             <EstimatorContext.Provider
                 value={{
@@ -34,12 +39,14 @@ export class App extends React.PureComponent<{}, IState> {
                         <Header
                             title={title}
                             currency={currency}
+                            totalMin={totalMin}
+                            totalMax={totalMax}
                             onEstimateToggle={this.onEstimateToggle}
                         />
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-md-8 col-sm-12'>
+                    <div className='col-lg-8 col-md-12'>
                         <Tabs
                             tabs={tabs}
                             activeTabIndex={currentTab}
@@ -49,7 +56,7 @@ export class App extends React.PureComponent<{}, IState> {
                             <Sections sections={tabs[currentTab].sections}/>
                         </div>
                     </div>
-                    <div className='col-md-4 d-none d-sm-block'>
+                    <div className='col-md-4 d-none d-sm-none d-md-none d-lg-block'>
                         <Estimator
                             title={estimatorTitle}
                             currency={currency}

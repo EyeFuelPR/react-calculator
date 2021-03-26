@@ -3,7 +3,7 @@
     overflow-y: scroll;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 991px) {
     .CardBody {
         height: calc(100vh - 200px);
     }
