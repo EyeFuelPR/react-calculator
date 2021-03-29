@@ -31,7 +31,8 @@ export class App extends React.PureComponent<{}, IState> {
         return (
             <EstimatorContext.Provider
                 value={{
-                    onChoiceSelected: (sectionID: number, questionID: number, choiceID: number, isDefault: boolean = false) => this.updateCost(sectionID, questionID, choiceID, isDefault)
+                    onChoiceSelected: (sectionID: number, questionID: number, choiceID: number, isDefault: boolean = false) => this.updateCost(sectionID, questionID, choiceID, isDefault),
+                    onEmailSend: () => this.onEmailSend()
                 }}
             >
                 <div className='row'>
@@ -109,6 +110,7 @@ export class App extends React.PureComponent<{}, IState> {
                         ...selectedServices[pseudoTitle],
                         title: pseudoTitle,
                         range,
+                        selectedChoice: selectedChoice.title,
                     }
                 }
             });
@@ -120,6 +122,7 @@ export class App extends React.PureComponent<{}, IState> {
                         order: index,
                         title: pseudoTitle,
                         range,
+                        selectedChoice: selectedChoice.title,
                     }
                 }
             });
@@ -140,5 +143,19 @@ export class App extends React.PureComponent<{}, IState> {
 
     private onEstimateToggle = () => {
         this.showModal();
+    }
+
+    private onEmailSend = () => {
+        const emailLines = [];
+        const { selectedServices } = this.state;
+        for (var service in selectedServices) {
+            const s = selectedServices[service];
+            emailLines.push(service);
+            emailLines.push(s.selectedChoice);
+        }
+        const emailBody = emailLines.join('\n');
+        const a = document.createElement('a');
+        a.href = 'mailto:sales@eyefuelpr.com?body=' + window.encodeURIComponent(emailBody);
+        a.click();
     }
 }

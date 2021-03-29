@@ -1,12 +1,15 @@
 import React from 'react';
 
 import { IRange } from '../data/questionnaire';
+import { EstimatorContext } from './Contexts';
+
 import styles from './Estimator.module.css';
 
 export interface ISelectedService {
     title: string;
     range: IRange | string;
     order: number;
+    selectedChoice: string;
 }
 
 interface IProps {
@@ -16,6 +19,7 @@ interface IProps {
 }
 
 export class Estimator extends React.PureComponent<IProps> {
+    static contextType = EstimatorContext;
     public render() {
         const { currency, title, selectedServices } = this.props;
         const servicesArray = Object.values(selectedServices).sort((a, b) => a.order > b.order ? 1 : -1)
@@ -44,6 +48,9 @@ export class Estimator extends React.PureComponent<IProps> {
                             )
                         })
                     }
+                </div>
+                <div className='card-footer'>
+                    <button className='btn btn-outline-dark' onClick={() => this.context.onEmailSend()}>Email</button>
                 </div>
             </div>
         );
