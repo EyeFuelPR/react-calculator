@@ -2,7 +2,7 @@
   "name": "react-calculator",
   "version": "0.1.0",
   "private": true,
-  "baseDirectory": "./build",
+  "baseDirectory": "build",
   "dependencies": {
     "bootstrap": "^4.6.0",
     "http-server": "^0.12.3",
